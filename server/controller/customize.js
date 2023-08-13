@@ -66,7 +66,8 @@ class Customize {
       let Products = await productModel.find({}).count();
       let Orders = await orderModel.find({}).count();
       let Users = await userModel.find({}).count();
-      if (Categories && Products && Orders) {
+      if (Categories && Products) {
+        console.log(Categories, Products, Orders, Users);
         return res.json({ Categories, Products, Orders, Users });
       }
     } catch (err) {

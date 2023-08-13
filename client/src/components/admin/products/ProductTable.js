@@ -74,7 +74,7 @@ const AllProduct = (props) => {
   return (
     <Fragment>
       <div className="col-span-1 overflow-auto bg-white shadow-lg p-4">
-        <table className="table-auto border w-full my-2">
+        <table className="table-auto table-bordered w-full my-2">
           <thead>
             <tr>
               <th className="px-4 py-2 border">Product</th>
@@ -89,7 +89,7 @@ const AllProduct = (props) => {
               <th className="px-4 py-2 border">Actions</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody >
             {products && products.length > 0 ? (
               products.map((item, key) => {
                 return (
@@ -127,49 +127,47 @@ const AllProduct = (props) => {
 const ProductTable = ({ product, deleteProduct, editProduct }) => {
   return (
     <Fragment>
-      <tr>
-        <td className="p-2 text-left">
-          {product.pName.length > 15
-            ? product.pDescription.substring(1, 15) + "..."
-            : product.pName}
+      <tr className="border">
+        <td className="p-2 text-left border">
+          {product.pName}
         </td>
-        <td className="p-2 text-left">
-          {product.pDescription.slice(0, 15)}...
+        <td className="p-2 text-left border">
+          {product.pDescription.slice(0, 55)}...
         </td>
-        <td className="p-2 text-center">
+        <td className="p-2 text-center border">
           <img
             className="w-12 h-12 object-cover object-center"
             src={`${apiURL}/uploads/products/${product.pImages[0]}`}
             alt="pic"
           />
         </td>
-        <td className="p-2 text-center">
+        <td className="p-2 text-center border">
           {product.pStatus === "Active" ? (
-            <span className="bg-green-200 rounded-full text-center text-xs px-2 font-semibold">
+            <span className="bg-success text-white rounded-full text-center text-xs px-3 py-2 font-semibold">
               {product.pStatus}
             </span>
           ) : (
-            <span className="bg-red-200 rounded-full text-center text-xs px-2 font-semibold">
+            <span className="bg-danger rounded-full text-center text-xs px-2 font-semibold">
               {product.pStatus}
             </span>
           )}
         </td>
-        <td className="p-2 text-center">{product.pQuantity}</td>
-        <td className="p-2 text-center">{product.pCategory.cName}</td>
-        <td className="p-2 text-center">{product.pOffer}</td>
-        <td className="p-2 text-center">
+        <td className="p-2 text-center border">{product.pQuantity}</td>
+        <td className="p-2 text-center border">{product.pCategory.cName}</td>
+        <td className="p-2 text-center border">{product.pOffer}</td>
+        <td className="p-2 text-center border">
           {moment(product.createdAt).format("lll")}
         </td>
-        <td className="p-2 text-center">
+        <td className="p-2 text-center border">
           {moment(product.updatedAt).format("lll")}
         </td>
-        <td className="p-2 flex items-center justify-center">
+        <td className="p-2 flex  items-center justify-center ">
           <span
             onClick={(e) => editProduct(product._id, product, true)}
-            className="cursor-pointer hover:bg-gray-200 rounded-lg p-2 mx-1"
+            className="cursor-pointer hover:bg-success rounded-lg p-2 mx-1"
           >
             <svg
-              className="w-6 h-6 fill-current text-green-500"
+              className="w-6 h-6 fill-current text-success"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -187,7 +185,7 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
             className="cursor-pointer hover:bg-gray-200 rounded-lg p-2 mx-1"
           >
             <svg
-              className="w-6 h-6 fill-current text-red-500"
+              className="w-6 h-6 fill-current text-danger"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
