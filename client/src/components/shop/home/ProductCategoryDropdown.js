@@ -43,6 +43,7 @@ const CategoryList = () => {
                 >
                   <img
                     src={`${apiURL}/uploads/categories/${item.cImage}`}
+                    style={{ height: "70%", width: "100%" }}
                     alt="pic"
                   />
                   <div className="font-medium">{item.cName}</div>
@@ -109,17 +110,18 @@ const FilterList = () => {
         <div className="flex justify-between items-center">
           <div className="flex flex-col space-y-2  w-2/3 lg:w-2/4">
             <label htmlFor="points" className="text-sm">
-              Price (between 0 and 10₹):{" "}
+              Price (between 0 and 10,000,000₹):{" "}
               <span className="font-semibold" style={{color:"#464694"}}>{range}.00₹</span>{" "}
             </label>
             <input
               value={range}
+              style={{color:"#464694"}}
               className="slider"
               type="range"
               id="points"
               min="0"
-              max="1000"
-              step="10"
+              max="10000000"
+              step="100000"
               onChange={(e) => rangeHandle(e)}
             />
           </div>

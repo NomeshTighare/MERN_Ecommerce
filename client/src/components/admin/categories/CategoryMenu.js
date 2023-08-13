@@ -16,7 +16,7 @@ const CategoryMenu = (props) => {
             onClick={(e) =>
               dispatch({ type: "addCategoryModal", payload: true })
             }
-            className="cursor-pointer rounded-full p-2 flex items-center justify-center text-gray-100 text-sm font-semibold uppercase"
+            className="cursor-pointer rounded-full px-3 py-2 flex items-center justify-center text-gray-100 text-sm font-semibold uppercase"
           >
             <svg
               className="w-6 h-6 text-gray-100 mr-2"

@@ -9,7 +9,7 @@ const Customize = () => {
 
   return (
     <Fragment>
-      <div className="m-auto md:w-1/2">
+      <div className="m-4 md:w-1/2">
         {!data.uploadSliderBtn ? (
           <div
             onClick={(e) =>
@@ -53,16 +53,14 @@ const UploadImageSection = () => {
 
   return (
     <Fragment>
-      <div className="relative m-4 bg-white p-4 shadow-lg" style={{borderRadius:"10px"}}>
-        
-        <h1 className="border-b-2 mb-4 pb-2 text-2xl font-semibold" style={{borderColor:"#464694"}}>
+      <div className="relative m-4 bg-white p-4 shadow-lg">
+        <h1 className="border-b-2  mb-4 pb-2 text-2xl font-semibold">
           Shop Slider Images
         </h1>
-        <AllImages />
         <div className="relative flex flex-col space-y-2 ">
           <div
             style={{ background: "#464694" }}
-            className="relative z-0 px-4 py-2 rounded text-white flex justify-content-center space-x-2 md:w-2/12 m-auto"
+            className="relative z-0 px-4 py-2 rounded text-white flex justify-content-center space-x-2 md:w-4/12"
           >
             <svg
               className="w-6 h-6"
@@ -114,7 +112,7 @@ const UploadImageSection = () => {
             />
           </svg>
         </span>
-        
+        <AllImages />
       </div>
     </Fragment>
   );
@@ -166,7 +164,7 @@ const AllImages = () => {
                 />
                 <span
                   onClick={(e) => deleteImageReq(item._id)}
-          
+                  style={{ background: "#464694" }}
                   className="absolute top-0 right-0 m-1 text-white cursor-pointer rounded-full p-1"
                 >
                   <svg
