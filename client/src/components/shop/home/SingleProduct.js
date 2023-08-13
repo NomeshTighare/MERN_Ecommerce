@@ -62,10 +62,11 @@ const SingleProduct = (props) => {
         products.map((item, index) => {
           return (
             <Fragment key={index}>
-              <div className="relative col-span-1 m-2">
+              <div className="relative col-span-1 m-2 p-3" style={{borderRadius:"10px", border:"1px ", backgroundColor:"#f7f8fa"}}>
                 <img
                   onClick={(e) => history.push(`/products/${item._id}`)}
-                  className="w-full object-cover object-center cursor-pointer"
+                  className=" object-cover object-center cursor-pointer"
+                  style={{ height: "200px", width: "200px", margin: " auto" }}
                   src={`${apiURL}/uploads/products/${item.pImages[0]}`}
                   alt=""
                 />
@@ -76,7 +77,7 @@ const SingleProduct = (props) => {
                   <div className="flex items-center space-x-1">
                     <span>
                       <svg
-                        className="w-4 h-4 fill-current text-yellow-700"
+                        className="w-4 h-4 fill-current" style={{color:"#464694"}}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -95,14 +96,15 @@ const SingleProduct = (props) => {
                     </span>
                   </div>
                 </div>
-                <div>${item.pPrice}.00</div>
+                <div>₹{item.pPrice}.00</div>
                 {/* WhisList Logic  */}
                 <div className="absolute top-0 right-0 mx-2 my-2 md:mx-4">
                   <svg
                     onClick={(e) => isWishReq(e, item._id, setWlist)}
                     className={`${
                       isWish(item._id, wList) && "hidden"
-                    } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700 transition-all duration-300 ease-in`}
+                    } w-5 h-5 md:w-6 md:h-6 cursor-pointer  transition-all duration-300 ease-in`} 
+                    style={{color:"#464694"}}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -119,8 +121,9 @@ const SingleProduct = (props) => {
                     onClick={(e) => unWishReq(e, item._id, setWlist)}
                     className={`${
                       !isWish(item._id, wList) && "hidden"
-                    } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700 transition-all duration-300 ease-in`}
+                    } w-5 h-5 md:w-6 md:h-6 cursor-pointer  transition-all duration-300 ease-in`}
                     fill="currentColor"
+                    style={{color:"#464694"}}
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
                   >

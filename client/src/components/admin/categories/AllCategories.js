@@ -124,39 +124,39 @@ const AllCategory = (props) => {
 const CategoryTable = ({ category, deleteCat, editCat }) => {
   return (
     <Fragment>
-      <tr>
-        <td className="p-2 text-left">
+      <tr className="border">
+        <td className="p-2 text-left border">
           {category.cName.length > 20
             ? category.cName.slice(0, 20) + "..."
             : category.cName}
         </td>
-        <td className="p-2 text-left">
+        <td className="p-2 text-left border">
           {category.cDescription.length > 30
             ? category.cDescription.slice(0, 30) + "..."
             : category.cDescription}
         </td>
-        <td className="p-2 text-center">
+        <td className="p-2 text-center border">
           <img
             className="w-12 h-12 object-cover object-center"
             src={`${apiURL}/uploads/categories/${category.cImage}`}
             alt=""
           />
         </td>
-        <td className="p-2 text-center">
+        <td className="px-2 text-center border">
           {category.cStatus === "Active" ? (
-            <span className="bg-green-200 rounded-full text-center text-xs px-2 font-semibold">
+            <span className="bg-success rounded-full text-white text-center text-xs px-3 py-2 font-semibold">
               {category.cStatus}
             </span>
           ) : (
-            <span className="bg-red-200 rounded-full text-center text-xs px-2 font-semibold">
+            <span className="bg-danger rounded-full text-white text-center text-xs px-3 py-2 font-semibold">
               {category.cStatus}
             </span>
           )}
         </td>
-        <td className="p-2 text-center">
+        <td className="p-2 text-center border">
           {moment(category.createdAt).format("lll")}
         </td>
-        <td className="p-2 text-center">
+        <td className="p-2 text-center border">
           {moment(category.updatedAt).format("lll")}
         </td>
         <td className="p-2 flex items-center justify-center">
@@ -172,7 +172,7 @@ const CategoryTable = ({ category, deleteCat, editCat }) => {
             className="cursor-pointer hover:bg-gray-200 rounded-lg p-2 mx-1"
           >
             <svg
-              className="w-6 h-6 fill-current text-green-500"
+              className="w-6 h-6 fill-current text-success"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +190,7 @@ const CategoryTable = ({ category, deleteCat, editCat }) => {
             className="cursor-pointer hover:bg-gray-200 rounded-lg p-2 mx-1"
           >
             <svg
-              className="w-6 h-6 fill-current text-red-500"
+              className="w-6 h-6 fill-current text-danger"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"

@@ -68,6 +68,7 @@ const ReviewForm = (props) => {
           <div className="mb-4">
             <fieldset
               onChange={(e) => setFdata({ ...fData, rating: e.target.value })}
+              
               className="rating"
             >
               <input
@@ -147,7 +148,7 @@ const ReviewForm = (props) => {
             </div>
             <div
               onClick={(e) => reviewSubmitHanlder(fData, setFdata, fetchData)}
-              style={{ background: "#303031" }}
+              style={{ background: "#464694" }}
               className="inline-block rounded px-4 py-2 text-white text-center cursor-pointer"
             >
               Submit

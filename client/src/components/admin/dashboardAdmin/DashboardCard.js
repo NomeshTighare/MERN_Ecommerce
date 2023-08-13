@@ -14,8 +14,8 @@ const DashboardCard = (props) => {
     <Fragment>
       {/* Card Start */}
       <div className="m-4 grid grid-cols-1 md:grid-cols-4 row-gap-4 col-gap-4">
-        <div className="flex flex-col justify-center items-center col-span-1 bg-white p-6 shadow-lg hover:shadow-none cursor-pointer transition-all duration-300 ease-in border-b-4 border-opacity-0 hover:border-opacity-100 border-indigo-500">
-          <div className="bg-indigo-200 p-2 cursor-pointer rounded-full">
+        <div className="flex flex-col justify-center items-center col-span-1 bg-white p-6 shadow-lg hover:shadow-none cursor-pointer transition-all duration-300 ease-in border-b-4 border-opacity-0 hover:border-opacity-100 border-indigo-500" style={{borderRadius:"10px"}}>
+          <div className="bg-indigo-500 text-white p-2 cursor-pointer rounded-full">
             <svg
               className="w-6 h-6"
               fill="none"
@@ -35,28 +35,10 @@ const DashboardCard = (props) => {
             {data ? data.totalData.Users : 0}
           </div>
           <div className="text-lg font-medium">Customers</div>
-          <div className="flex items-center space-x-1 text-green-500">
-            <span>7%</span>
-            <span>
-              <svg
-                className="w-3 h-3"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 10l7-7m0 0l7 7m-7-7v18"
-                />
-              </svg>
-            </span>
-          </div>
+         
         </div>
-        <div className="flex flex-col justify-center items-center col-span-1 bg-white p-6 shadow-lg hover:shadow-none cursor-pointer transition-all duration-300 ease-in border-b-4 border-opacity-0 hover:border-opacity-100 border-red-500">
-          <div className="bg-red-200 p-2 cursor-pointer rounded-full">
+        <div className="flex flex-col justify-center items-center col-span-1 bg-white p-6 shadow-lg hover:shadow-none cursor-pointer transition-all duration-300 ease-in border-b-4 border-opacity-0 hover:border-opacity-100 border-red-500" style={{borderRadius:"10px"}}>
+          <div className="bg-red-500 text-white p-2 cursor-pointer rounded-full">
             <svg
               className="w-6 h-6"
               fill="none"
@@ -76,28 +58,10 @@ const DashboardCard = (props) => {
             {data ? data.totalData.Orders : 0}
           </div>
           <div className="text-lg font-medium">Orders</div>
-          <div className="flex items-center space-x-1 text-green-500">
-            <span>10%</span>
-            <span>
-              <svg
-                className="w-3 h-3"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 10l7-7m0 0l7 7m-7-7v18"
-                />
-              </svg>
-            </span>
-          </div>
+          
         </div>
-        <div className="flex flex-col justify-center items-center col-span-1 bg-white p-6 shadow-lg hover:shadow-none cursor-pointer transition-all duration-300 ease-in border-b-4 border-opacity-0 hover:border-opacity-100 border-green-500">
-          <div className="bg-green-200 p-2 cursor-pointer rounded-full">
+        <div className="flex flex-col justify-center items-center col-span-1 bg-white p-6 shadow-lg hover:shadow-none cursor-pointer transition-all duration-300 ease-in border-b-4 border-opacity-0 hover:border-opacity-100 border-green-500" style={{borderRadius:"10px"}}>
+          <div className="bg-green-500 text-white p-2 cursor-pointer rounded-full">
             <svg
               className="w-6 h-6"
               fill="currentColor"
@@ -116,8 +80,8 @@ const DashboardCard = (props) => {
           </div>
           <div className="text-lg font-medium">Product</div>
         </div>
-        <div className="flex flex-col justify-center items-center col-span-1 bg-white p-6 shadow-lg hover:shadow-none cursor-pointer transition-all duration-300 ease-in border-b-4 border-opacity-0 hover:border-opacity-100 border-orange-500">
-          <div className="bg-orange-200 p-2 cursor-pointer rounded-full">
+        <div className="flex flex-col justify-center items-center col-span-1 bg-white p-6 shadow-lg hover:shadow-none cursor-pointer transition-all duration-300 ease-in border-b-4 border-opacity-0 hover:border-opacity-100 border-orange-500" style={{borderRadius:"10px"}}>
+          <div className="bg-orange-500 text-white p-2 cursor-pointer rounded-full">
             <svg
               className="w-6 h-6"
               fill="none"

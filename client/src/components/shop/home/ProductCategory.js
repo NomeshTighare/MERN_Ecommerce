@@ -7,7 +7,7 @@ const ProductCategory = (props) => {
 
   return (
     <Fragment>
-      <div className="flex justify-between font-medium">
+      <div className="flex justify-between font-medium p-3"  style={{borderRadius:"5px", border:"1px ", backgroundColor:"#f7f8fa"}}>
         <div
           onClick={(e) =>
             dispatch({
@@ -16,14 +16,15 @@ const ProductCategory = (props) => {
             })
           }
           className={`flex items-center space-x-1 cursor-pointer ${
-            data.categoryListDropdown ? "text-yellow-700" : ""
+            data.categoryListDropdown ? "text-indigo-700" : ""
           }`}
         >
-          <span className="text-md md:text-lg hover:text-yellow-700">
+          <span className="text-md md:text-lg hover:text-indigo-700">
             Categories
           </span>
           <svg
-            className="w-4 h-4 text-yellow-700"
+            className="w-4 h-4 "
+            style={{color:"#464694"}}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -46,13 +47,14 @@ const ProductCategory = (props) => {
               })
             }
             className={`flex items-center space-x-1 cursor-pointer ${
-              data.filterListDropdown ? "text-yellow-700" : ""
+              data.filterListDropdown ? "text-indigo-700" : ""
             }`}
           >
             <span className="text-md md:text-lg">Filter</span>
             <span>
               <svg
-                className="w-4 h-4 text-gray-700 text-yellow-700"
+                className="w-4 h-4 text-gray-700 "
+                style={{color:"#464694"}}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -76,13 +78,14 @@ const ProductCategory = (props) => {
               })
             }
             className={`flex items-center space-x-1 cursor-pointer ${
-              data.searchDropdown ? "text-yellow-700" : ""
+              data.searchDropdown ? "text-indigo-700" : ""
             }`}
           >
             <span className="text-md md:text-lg">Search</span>
             <span>
               <svg
-                className="w-4 h-4 text-gray-700 text-yellow-700"
+                className="w-4 h-4 text-gray-700 "
+                style={{color:"#464694"}}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

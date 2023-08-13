@@ -77,9 +77,9 @@ const AllProduct = (props) => {
         <table className="table-auto table-bordered w-full my-2">
           <thead>
             <tr>
-              <th className="px-4 py-2 border">Product</th>
-              <th className="px-4 py-2 border">Description</th>
-              <th className="px-4 py-2 border">Image</th>
+              <th className="px-4 py-2 border">Product Name</th>
+              <th className="px-4 py-2 border">Product Description</th>
+              <th className="px-4 py-2 border">Product Image</th>
               <th className="px-4 py-2 border">Status</th>
               <th className="px-4 py-2 border">Stock</th>
               <th className="px-4 py-2 border">Category</th>
@@ -129,15 +129,16 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
     <Fragment>
       <tr className="border">
         <td className="p-2 text-left border">
-          {product.pName}
+          {product.pName.slice(0, 40)}...
         </td>
         <td className="p-2 text-left border">
-          {product.pDescription.slice(0, 55)}...
+          {product.pDescription.slice(0, 40)}...
         </td>
         <td className="p-2 text-center border">
           <img
-            className="w-12 h-12 object-cover object-center"
+            className="w-12 h-12 item-center justify-center"
             src={`${apiURL}/uploads/products/${product.pImages[0]}`}
+            style={{display: "block", margin: "auto"}}
             alt="pic"
           />
         </td>

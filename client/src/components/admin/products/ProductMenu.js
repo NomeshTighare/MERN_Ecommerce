@@ -7,11 +7,11 @@ const ProductMenu = (props) => {
   const { dispatch } = useContext(ProductContext);
   return (
     <Fragment>
-      <div className="col-span-1 flex justify-between items-center">
+      <div className="col-span-1 flex justify-content-end items-center">
         <div className="flex items-center">
           {/* It's open the add product modal */}
           <span
-            style={{ background: "#303031" }}
+            style={{ background: "#464694" }}
             onClick={(e) =>
               dispatch({ type: "addProductModal", payload: true })
             }

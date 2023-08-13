@@ -29,8 +29,8 @@ const CategoryList = () => {
 
   return (
     <div className={`${data.categoryListDropdown ? "" : "hidden"} my-4`}>
-      <hr />
-      <div className="py-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+     
+      <div className="py-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4" >
         {categories && categories.length > 0 ? (
           categories.map((item, index) => {
             return (
@@ -39,7 +39,7 @@ const CategoryList = () => {
                   onClick={(e) =>
                     history.push(`/products/category/${item._id}`)
                   }
-                  className="col-span-1 m-2 flex flex-col items-center justify-center space-y-2 cursor-pointer"
+                  className="col-span-1 m-2 flex flex-col items-center justify-center space-y-2 cursor-pointer" style={{borderRadius:"10px", border:"1px ", backgroundColor:"#f7f8fa"}}
                 >
                   <img
                     src={`${apiURL}/uploads/categories/${item.cImage}`}
@@ -54,6 +54,7 @@ const CategoryList = () => {
           <div className="text-xl text-center my-4">No Category</div>
         )}
       </div>
+      <hr />
     </div>
   );
 };
@@ -108,8 +109,8 @@ const FilterList = () => {
         <div className="flex justify-between items-center">
           <div className="flex flex-col space-y-2  w-2/3 lg:w-2/4">
             <label htmlFor="points" className="text-sm">
-              Price (between 0 and 10$):{" "}
-              <span className="font-semibold text-yellow-700">{range}.00$</span>{" "}
+              Price (between 0 and 10₹):{" "}
+              <span className="font-semibold" style={{color:"#464694"}}>{range}.00₹</span>{" "}
             </label>
             <input
               value={range}
@@ -190,7 +191,8 @@ const Search = () => {
       <input
         value={search}
         onChange={(e) => searchHandle(e)}
-        className="px-4 text-xl py-4 focus:outline-none"
+        className="px-4 text-xl py-4 focus:outline-none" 
+        style={{border:"1px solid #464694",borderRadius:"5px", width:"80%", height:"50px", color:"#464694"}}
         type="text"
         placeholder="Search products..."
       />

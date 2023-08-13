@@ -12,14 +12,30 @@ const Submenu = ({ category }) => {
       {/* Submenu Section */}
       <section className="mx-4 mt-24 md:mx-12 md:mt-32 lg:mt-24">
         <div className="flex justify-between items-center">
-          <div className="text-sm flex space-x-3">
+          <div className="text-sm flex space-x-3 align-items-center">
             <span
-              className="hover:text-yellow-700 cursor-pointer"
+              className=" cursor-pointer"
               onClick={(e) => history.push("/")}
             >
               Shop
             </span>
-            <span className="text-yellow-700 cursor-default">{category}</span>
+            <div>
+            <svg
+              className="w-3 h-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 5l7 7-7 7M5 5l7 7-7 7"
+              />
+            </svg>
+          </div>
+            <span className="cursor-default" style={{color:"#464694"}}>{category}</span>
           </div>
           <div>
             <svg
@@ -56,10 +72,11 @@ const AllProduct = ({ products }) => {
           products.map((item, index) => {
             return (
               <Fragment key={index}>
-                <div className="relative col-span-1 m-2">
+                <div className="relative col-span-1 m-2 p-2" style={{borderRadius:"10px", border:"1px ", backgroundColor:"#f7f8fa"}}>
                   <img
                     onClick={(e) => history.push(`/products/${item._id}`)}
-                    className="w-full object-cover object-center cursor-pointer"
+                    style={{ height: "200px", width: "200px", margin: " auto" }}
+                    className=" object-cover object-center cursor-pointer"
                     src={`${apiURL}/uploads/products/${item.pImages[0]}`}
                     alt=""
                   />
@@ -70,7 +87,8 @@ const AllProduct = ({ products }) => {
                     <div className="flex items-center space-x-1">
                       <span>
                         <svg
-                          className="w-4 h-4 fill-current text-yellow-700"
+                          className="w-4 h-4 fill-current "
+                          style={{color:"#464694"}}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -89,11 +107,12 @@ const AllProduct = ({ products }) => {
                       </span>
                     </div>
                   </div>
-                  <div>{item.pPrice}.00$</div>
-                  <div className="absolute top-0 right-0 mx-2 my-2 md:mx-4">
+                  <div>₹{item.pPrice}.00</div>
+                  {/* <div className="absolute top-0 right-0 mx-2 my-2 md:mx-4">
                     <svg
-                      className="w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700"
+                      className="w-5 h-5 md:w-6 md:h-6 cursor-pointer "
                       fill="none"
+                      style={{color:"#464694"}}
                       stroke="currentColor"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +124,7 @@ const AllProduct = ({ products }) => {
                         d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                       />
                     </svg>
-                  </div>
+                  </div> */}
                 </div>
               </Fragment>
             );
