@@ -68,8 +68,8 @@ const CartModal = () => {
         } fixed z-40 inset-0 flex items-start justify-end`}
       >
         <div
-          style={{ background: "#303031" }}
-          className="w-full md:w-5/12 lg:w-4/12 h-full flex flex-col justify-between"
+       
+          className="w-full md:w-5/12 bg-dark lg:w-4/12 h-full flex flex-col justify-between"
         >
           <div className="overflow-y-auto">
             <div className="border-b border-gray-700 flex justify-between">
@@ -122,7 +122,7 @@ const CartModal = () => {
                               <span className="text-sm text-gray-400">
                                 Subtotoal :
                               </span>{" "}
-                              ${subTotal(item._id, item.pPrice)}.00
+                              ₹{subTotal(item._id, item.pPrice)}.00
                             </div>{" "}
                             {/* SUbtotal Count */}
                           </div>
@@ -175,7 +175,7 @@ const CartModal = () => {
                       cartModalOpen();
                     }}
                   >
-                    Checkout ${data.cartTotalCost}.00
+                    Checkout ₹{data.cartTotalCost}.00
                   </div>
                 ) : (
                   <div
@@ -193,7 +193,7 @@ const CartModal = () => {
                       });
                     }}
                   >
-                    Checkout ${data.cartTotalCost}.00
+                    Checkout ₹{data.cartTotalCost}.00
                   </div>
                 )}
               </Fragment>

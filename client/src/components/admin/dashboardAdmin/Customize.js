@@ -18,7 +18,7 @@ const Customize = () => {
                 payload: !data.uploadSliderBtn,
               })
             }
-            style={{ background: "#303031" }}
+            style={{ background: "#464694" }}
             className="cursor-pointer rounded-full p-2 flex items-center justify-center text-gray-100 text-sm font-semibold uppercase"
           >
             <svg
@@ -54,13 +54,13 @@ const UploadImageSection = () => {
   return (
     <Fragment>
       <div className="relative m-4 bg-white p-4 shadow-lg">
-        <h1 className="border-b-2 border-yellow-700 mb-4 pb-2 text-2xl font-semibold">
+        <h1 className="border-b-2  mb-4 pb-2 text-2xl font-semibold">
           Shop Slider Images
         </h1>
-        <div className="relative flex flex-col space-y-2">
+        <div className="relative flex flex-col space-y-2 ">
           <div
-            style={{ background: "#303031" }}
-            className="relative z-0 px-4 py-2 rounded text-white flex justify-center space-x-2 md:w-4/12"
+            style={{ background: "#464694" }}
+            className="relative z-0 px-4 py-2 rounded text-white flex justify-content-center space-x-2 md:w-4/12"
           >
             <svg
               className="w-6 h-6"
@@ -94,7 +94,7 @@ const UploadImageSection = () => {
               payload: !data.uploadSliderBtn,
             })
           }
-          style={{ background: "#303031" }}
+          style={{ background: "#464694" }}
           className="cursor-pointer absolute top-0 right-0 m-4 rounded-full p-1"
         >
           <svg
@@ -164,7 +164,7 @@ const AllImages = () => {
                 />
                 <span
                   onClick={(e) => deleteImageReq(item._id)}
-                  style={{ background: "#303031" }}
+                  style={{ background: "#464694" }}
                   className="absolute top-0 right-0 m-1 text-white cursor-pointer rounded-full p-1"
                 >
                   <svg

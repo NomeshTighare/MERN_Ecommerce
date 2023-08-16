@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
         {/* All Children pass from here */}
         {children}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </Fragment>
   );
 };

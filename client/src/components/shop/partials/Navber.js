@@ -73,7 +73,7 @@ const Navber = (props) => {
               style={{ letterSpacing: "0.10rem" }}
               className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
             >
-              Hayroo
+              Electronics Shop
             </span>
           </div>
           <div
@@ -81,7 +81,7 @@ const Navber = (props) => {
             style={{ letterSpacing: "0.70rem" }}
             className="hidden lg:block flex items-left col-span-1 text-center text-gray-800 font-bold tracking-widest uppercase text-2xl cursor-pointer"
           >
-            Hayroo
+            Electronics Shop
           </div>
           <div className="flex items-right col-span-2 lg:col-span-1 flex justify-end">
             {/*  WishList Page Button */}
@@ -353,7 +353,7 @@ const Navber = (props) => {
                   d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                 />
               </svg>
-              <span className="absolute top-0 ml-6 mt-1 bg-yellow-700 rounded px-1 text-white text-xs hover:text-gray-200 font-semibold">
+              <span className="absolute top-0 ml-6 mt-1 rounded px-1 text-white text-xs hover:text-gray-200 font-semibold" style={{backgroundColor:"#464694"}}>
                 {data.cartProduct !== null ? data.cartProduct.length : 0}
               </span>
             </div>

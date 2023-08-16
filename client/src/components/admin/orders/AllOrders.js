@@ -93,23 +93,23 @@ const CategoryTable = ({ order, editOrder }) => {
 
   return (
     <Fragment>
-      <tr className="border-b">
-        <td className="w-48 hover:bg-gray-200 p-2 flex flex-col space-y-1">
+      <tr className="border">
+        <td className="w-48 hover:bg-gray-200 p-2 flex flex-col space-y-1 border">
           {order.allProduct.map((product, i) => {
             return (
-              <span className="block flex items-center space-x-2" key={i}>
+              <span className="block flex items-center " key={i}>
                 <img
                   className="w-8 h-8 object-cover object-center"
                   src={`${apiURL}/uploads/products/${product.id.pImages[0]}`}
                   alt="productImage"
                 />
-                <span>{product.id.pName}</span>
+                <span>{product.id.pName.slice(0, 40)}...</span>
                 <span>{product.quantitiy}x</span>
               </span>
             );
           })}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center cursor-default">
+        <td className="hover:bg-gray-200 p-2 text-center cursor-default border" >
           {order.status === "Not processed" && (
             <span className="block text-red-600 rounded-full text-center text-xs px-2 font-semibold">
               {order.status}
@@ -136,25 +136,25 @@ const CategoryTable = ({ order, editOrder }) => {
             </span>
           )}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-gray-200 p-2 text-center border">
           ${order.amount}.00
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-gray-200 p-2 text-center border">
           {order.transactionId}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">{order.user.name}</td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-gray-200 p-2 text-center border">{order.user.name}</td>
+        <td className="hover:bg-gray-200 p-2 text-center border">
           {order.user.email}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">{order.phone}</td>
-        <td className="hover:bg-gray-200 p-2 text-center">{order.address}</td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-gray-200 p-2 text-center border">{order.phone}</td>
+        <td className="hover:bg-gray-200 p-2 text-center border">{order.address}</td>
+        <td className="hover:bg-gray-200 p-2 text-center border">
           {moment(order.createdAt).format("lll")}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-gray-200 p-2 text-center border">
           {moment(order.updatedAt).format("lll")}
         </td>
-        <td className="p-2 flex items-center justify-center">
+        <td className="p-2 flex items-center justify-center ">
           <span
             onClick={(e) => editOrder(order._id, true, order.status)}
             className="cursor-pointer hover:bg-gray-200 rounded-lg p-2 mx-1"

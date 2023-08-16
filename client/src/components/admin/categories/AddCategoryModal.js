@@ -100,13 +100,13 @@ const AddCategoryModal = (props) => {
         } fixed inset-0 m-4  flex items-center z-30 justify-center`}
       >
         <div className="relative bg-white w-12/12 md:w-3/6 shadow-lg flex flex-col items-center space-y-4  overflow-y-auto px-4 py-4 md:px-8">
-          <div className="flex items-center justify-between w-full pt-4">
+          <div className="flex items-center justify-between w-full px-3">
             <span className="text-left font-semibold text-2xl tracking-wider">
               Add Category
             </span>
             {/* Close Modal */}
             <span
-              style={{ background: "#303031" }}
+              style={{ background: "#464694" }}
               onClick={(e) =>
                 dispatch({ type: "addCategoryModal", payload: false })
               }
@@ -208,7 +208,7 @@ const AddCategoryModal = (props) => {
             </div>
             <div className="flex flex-col space-y-1 w-full pb-4 md:pb-6 mt-4">
               <button
-                style={{ background: "#303031" }}
+                style={{ background: "#464694" }}
                 type="submit"
                 className="bg-gray-800 text-gray-100 rounded-full text-lg font-medium py-2"
               >

@@ -127,7 +127,7 @@ const ProductDetailsSection = (props) => {
               alt="pic"
             />
           </div>
-          <div className="col-span-2 md:col-span-7">
+          <div className="col-span-2 md:col-span-5 m-auto">
             <div className="relative">
               <img
                 className="w-full"
@@ -172,19 +172,20 @@ const ProductDetailsSection = (props) => {
               </div>
             </div>
           </div>
-          <div className="col-span-2 mt-8 md:mt-0 md:col-span-4 md:ml-6 lg:ml-12">
+          <div className="col-span-2 mt-8 md:mt-0 md:col-span-6 md:ml-8 lg:ml-12">
             <div className="flex flex-col leading-8">
               <div className="text-2xl tracking-wider">{sProduct.pName}</div>
               <div className="flex justify-between items-center">
-                <span className="text-xl tracking-wider text-yellow-700">
-                  ${sProduct.pPrice}.00
+                <span className="text-xl tracking-wider" style={{color:"#464694"}}>
+                ₹{sProduct.pPrice}.00
                 </span>
                 <span>
                   <svg
                     onClick={(e) => isWishReq(e, sProduct._id, setWlist)}
                     className={`${
                       isWish(sProduct._id, wList) && "hidden"
-                    } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700`}
+                    } w-5 h-5 md:w-6 md:h-6 cursor-pointer `}
+                    style={{color:"#464694"}}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -201,7 +202,8 @@ const ProductDetailsSection = (props) => {
                     onClick={(e) => unWishReq(e, sProduct._id, setWlist)}
                     className={`${
                       !isWish(sProduct._id, wList) && "hidden"
-                    } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700`}
+                    } w-5 h-5 md:w-6 md:h-6 cursor-pointer `}
+                    style={{color:"#464694"}}
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -368,7 +370,7 @@ const ProductDetailsSection = (props) => {
                   {layoutData.inCart !== null &&
                   layoutData.inCart.includes(sProduct._id) === true ? (
                     <div
-                      style={{ background: "#303031" }}
+                      style={{ background: "#464694" }}
                       className={`px-4 py-2 text-white text-center cursor-not-allowed uppercase opacity-75`}
                     >
                       In cart
@@ -387,7 +389,7 @@ const ProductDetailsSection = (props) => {
                           totalCost
                         )
                       }
-                      style={{ background: "#303031" }}
+                      style={{ background: "#464694" }}
                       className={`px-4 py-2 text-white text-center cursor-pointer uppercase`}
                     >
                       Add to cart
@@ -399,14 +401,14 @@ const ProductDetailsSection = (props) => {
                   {layoutData.inCart !== null &&
                   layoutData.inCart.includes(sProduct._id) === true ? (
                     <div
-                      style={{ background: "#303031" }}
+                      style={{ background: "#464694" }}
                       className={`px-4 py-2 text-white text-center cursor-not-allowed uppercase opacity-75`}
                     >
                       In cart
                     </div>
                   ) : (
                     <div
-                      style={{ background: "#303031" }}
+                      style={{ background: "#464694" }}
                       disabled={true}
                       className="px-4 py-2 text-white opacity-50 cursor-not-allowed text-center uppercase"
                     >

@@ -10,15 +10,15 @@ const OrderMenu = (props) => {
   return (
     <Fragment>
       <div className="col-span-1 flex items-center">
-        <div className="flex flex-col space-y-4 md:flex-row md:justify-between md:items-center md:space-y-0 w-full">
+        <div className="flex flex-col space-y-4 md:flex-row md:justify-between md:items-center md:space-y-0 w-full ">
           {/* It's open the add order modal */}
           <div
-            style={{ background: "#303031" }}
+            style={{ background: "#464694" }}
             className="relative rounded-full text-gray-100 text-sm font-semibold uppercase"
           >
             <div
               onClick={(e) => setDropdown(!dropdown)}
-              className="flex items-center cursor-pointer rounded-full overflow-hidden p-2 justify-center"
+              className="flex items-center cursor-pointer rounded-full overflow-hidden px-3 py-2 justify-center"
             >
               <svg
                 className="w-6 h-6 text-gray-100 mr-2"
@@ -31,7 +31,7 @@ const OrderMenu = (props) => {
               <span className="pr-2">Filter</span>
             </div>
             <div
-              style={{ background: "#303031" }}
+              style={{ background: "#464694" }}
               className={`${
                 dropdown ? "" : "hidden"
               } absolute top-0 left-0 mt-12 rounded-lg overflow-hidden w-full md:w-48 flex flex-col z-10`}

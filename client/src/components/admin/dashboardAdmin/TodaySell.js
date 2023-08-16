@@ -29,7 +29,7 @@ const SellTable = () => {
 
   return (
     <Fragment>
-      <div className="col-span-1 overflow-auto bg-white shadow-lg p-4">
+      <div className="col-span-1 overflow-auto bg-white shadow-lg p-4" style={{borderRadius:"10px"}}>
         <div className="text-2xl font-semibold mb-6 text-center">
           Today's Orders{" "}
           {data.totalOrders.Orders !== undefined ? ordersList().length : 0}
@@ -50,7 +50,7 @@ const SellTable = () => {
                 return <TodayOrderTable order={item} key={key} />;
               })
             ) : (
-              <tr>
+              <tr className="border">
                 <td
                   colSpan="5"
                   className="text-xl text-center font-semibold py-8"
@@ -69,7 +69,7 @@ const SellTable = () => {
         <div className="flex justify-center">
           <span
             onClick={(e) => history.push("/admin/dashboard/orders")}
-            style={{ background: "#303031" }}
+            style={{ background: "#464694" }}
             className="cursor-pointer px-4 py-2 text-white rounded-full"
           >
             View All
@@ -83,30 +83,30 @@ const SellTable = () => {
 const TodayOrderTable = ({ order }) => {
   return (
     <Fragment>
-      <tr>
-        <td className="w-48 hover:bg-gray-200 p-2 flex flex-col space-y-1">
+      <tr className="border">
+        <td className="w-48 hover:bg-gray-200 p-2 flex flex-col space-y-1 border">
           {order.allProduct.map((item, index) => {
             return (
               <div key={index} className="flex space-x-2">
-                <span>{item.id.pName}</span>
+                <span>{item.id.pName.slice(0, 40)}...</span>
                 <span>{item.quantitiy}x</span>
               </div>
             );
           })}
         </td>
-        <td className="p-2 text-left">
+        <td className="p-2 text-left border">
           {order.allProduct.map((item, index) => {
             return (
               <img
                 key={index}
-                className="w-12 h-12 object-cover"
+                className="w-12 h-12 object-cover m-auto"
                 src={`${apiURL}/uploads/products/${item.id.pImages[0]}`}
                 alt="Pic"
               />
             );
           })}
         </td>
-        <td className="p-2 text-center">
+        <td className="p-2 text-center border">
           {order.status === "Not processed" && (
             <span className="block text-red-600 rounded-full text-center text-xs px-2 font-semibold">
               {order.status}
@@ -133,8 +133,8 @@ const TodayOrderTable = ({ order }) => {
             </span>
           )}
         </td>
-        <td className="p-2 text-center">{order.address}</td>
-        <td className="p-2 text-center">
+        <td className="p-2 text-center border">{order.address}</td>
+        <td className="p-2 text-center border">
           {moment(order.createdAt).format("lll")}
         </td>
       </tr>

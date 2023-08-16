@@ -7,15 +7,15 @@ const ProductMenu = (props) => {
   const { dispatch } = useContext(ProductContext);
   return (
     <Fragment>
-      <div className="col-span-1 flex justify-between items-center">
+      <div className="col-span-1 flex justify-content-end items-center">
         <div className="flex items-center">
           {/* It's open the add product modal */}
           <span
-            style={{ background: "#303031" }}
+            style={{ background: "#464694" }}
             onClick={(e) =>
               dispatch({ type: "addProductModal", payload: true })
             }
-            className="rounded-full cursor-pointer p-2 bg-gray-800 flex items-center text-gray-100 text-sm font-semibold uppercase"
+            className="rounded-full cursor-pointer px-3 py-2 bg-gray-800 flex items-center text-gray-100 text-sm font-semibold uppercase"
           >
             <svg
               className="w-6 h-6 text-gray-100 mr-2"
