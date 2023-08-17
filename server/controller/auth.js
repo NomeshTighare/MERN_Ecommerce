@@ -118,17 +118,20 @@ class Auth {
         const login = await bcrypt.compare(password, data.password);
         if (login) {
           const token = jwt.sign(
-            { _id: data._id, role: data.userRole },
+            { _id: data._id, role: data.userRole , email: data.email, phoneNumber: data.phoneNumber, verify: data.verify},
             JWT_SECRET
           );
           const encode = jwt.verify(token, JWT_SECRET);
           return res.json({
             token: token,
             user: encode,
+            message: 'Login Sucessfull',
+            success: 1
           });
         } else {
           return res.json({
-            error: "Invalid email or password",
+            message: err.message,
+            success: 0
           });
         }
       }
