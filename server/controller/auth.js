@@ -112,7 +112,8 @@ class Auth {
       const data = await userModel.findOne({ email: email });
       if (!data) {
         return res.json({
-          error: "Invalid email or password",
+          message: err.message,
+          success: 0
         });
       } else {
         const login = await bcrypt.compare(password, data.password);
