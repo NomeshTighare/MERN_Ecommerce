@@ -121,7 +121,7 @@ class Auth {
       const data = await userModel.findOne({ email: emailAddress });
       if (!data) {
         return res.json({
-          message: 'Login Faild. Invalid Email Address',
+          message: 'Invalid Email Address, Please Enter Valid Email Address.',
           success: 0
         });
       } else {
@@ -140,7 +140,7 @@ class Auth {
           });
         } else {
           return res.json({
-            message: "Login Faild. Invalid Password",
+            message: "Invalid Password, Please Enter Valid Password.",
             success: 0
           });
         }
