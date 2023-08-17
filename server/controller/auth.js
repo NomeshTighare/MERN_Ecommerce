@@ -112,7 +112,7 @@ class Auth {
       const data = await userModel.findOne({ email: email });
       if (!data) {
         return res.json({
-          message: err.message,
+          message: 'Login Faild',
           success: 0
         });
       } else {
