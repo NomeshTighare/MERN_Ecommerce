@@ -27,7 +27,17 @@ class User {
           .findById(uId)
           .select("name email phoneNumber userImage updatedAt createdAt");
         if (User) {
-          return res.json({ User });
+          return res.json({ 
+              success : 1,
+              data: User,
+              message : 'user details by id'
+           });
+        }
+        else{
+          return res.json({
+            success : 0,
+            message : 'Invalid User Id'
+          })
         }
       } catch (err) {
         console.log(err);
