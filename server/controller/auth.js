@@ -26,7 +26,10 @@ class Auth {
 
   /* User Registration/Signup controller  */
   async postSignup(req, res) {
+    console.log(req.body);
+    var emailId = req.body.email.toLowerCase();
     let { name, email, password, cPassword } = req.body;
+  
     let error = {};
     if (!name || !email || !password || !cPassword) {
       error = {
@@ -42,7 +45,7 @@ class Auth {
       error = { ...error, name: "Name must be 3-25 charecter" };
       return res.json({ error });
     } else {
-      if (validateEmail(email)) {
+      if (validateEmail(emailId)) {
         name = toTitleCase(name);
         if ((password.length > 255) | (password.length < 8)) {
           error = {
@@ -56,7 +59,8 @@ class Auth {
           // If Email & Number exists in Database then:
           try {
             password = bcrypt.hashSync(password, 10);
-            const data = await userModel.findOne({ email: email });
+            email = req.body.email.toLowerCase();
+            const data = await userModel.findOne({ email: emailId });
             if (data) {
               error = {
                 ...error,
@@ -66,6 +70,7 @@ class Auth {
               };
               return res.json({ error });
             } else {
+              console.log('new user')
               let newUser = new userModel({
                 name,
                 email,
@@ -76,8 +81,11 @@ class Auth {
               newUser
                 .save()
                 .then((data) => {
+                  const userData = { userName: data.name, userEmail: data.email}
                   return res.json({
-                    success: "Account create successfully. Please login",
+                    success: 1,
+                    message: "Account create successfully. Please login",
+                    user: userData
                   });
                 })
                 .catch((err) => {
@@ -109,10 +117,11 @@ class Auth {
       });
     }
     try {
-      const data = await userModel.findOne({ email: email });
+      var emailAddress = req.body.email.toLowerCase()
+      const data = await userModel.findOne({ email: emailAddress });
       if (!data) {
         return res.json({
-          message: 'Login Faild',
+          message: 'Login Faild. Invalid Email Address',
           success: 0
         });
       } else {
@@ -131,7 +140,7 @@ class Auth {
           });
         } else {
           return res.json({
-            message: err.message,
+            message: "Login Faild. Invalid Password",
             success: 0
           });
         }
