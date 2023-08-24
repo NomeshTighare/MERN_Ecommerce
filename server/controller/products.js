@@ -45,7 +45,7 @@ class Product {
     console.log("pop ",req.files)
     let { pName, pDescription, pPrice, pQuantity, pCategory, pOffer, pStatus } =
       req.body;
-    let images = req.files;
+    let images = req.files.path;
     // Validation
     if (
       !pName |
