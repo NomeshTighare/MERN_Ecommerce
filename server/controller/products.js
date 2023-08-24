@@ -45,7 +45,7 @@ class Product {
     console.log("pop ",req.files)
     let { pName, pDescription, pPrice, pQuantity, pCategory, pOffer, pStatus } =
       req.body;
-    let images = req.files.path;
+    let images = req.files;
     // Validation
     if (
       !pName |
@@ -74,7 +74,7 @@ class Product {
       try {
         let allImages = [];
         for (const img of images) {
-          allImages.push(img.filename);
+          allImages.push(img.path);
         }
         let newProduct = new productModel({
           pImages: allImages,
