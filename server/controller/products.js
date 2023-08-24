@@ -74,7 +74,7 @@ class Product {
       try {
         let allImages = [];
         for (const img of images) {
-          allImages.push(img.path);
+          allImages.push(img.filename);
         }
         let newProduct = new productModel({
           pImages: allImages,
